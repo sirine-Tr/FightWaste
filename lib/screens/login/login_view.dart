@@ -2,6 +2,7 @@ import 'package:delivery_app/common/color_app.dart';
 import 'package:delivery_app/common_widget/round_textField.dart';
 import 'package:delivery_app/screens/login/forget_pwd_view.dart';
 import 'package:delivery_app/screens/login/sign_up_view.dart';
+import 'package:delivery_app/screens/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatefulWidget {
@@ -46,7 +47,18 @@ class _LoginViewState extends State<LoginView> {
         SizedBox(height: 25,),
         RoundTextfield(hintText: "your password",controller: txtPWD,obscureText: true,),
         SizedBox(height: 125,),
-         Container(
+         Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const OnBoardingView(),
+                    ),
+                  );
+                },
+                child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
                     color: Tcolor.primary,
@@ -62,6 +74,8 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                 ),
+              ),
+            ),
                  SizedBox(height: 4,),
                  TextButton(onPressed: (){
                   Navigator.push(
