@@ -2,6 +2,7 @@ import 'package:delivery_app/common/color_app.dart';
 import 'package:delivery_app/common_widget/tab_button.dart';
 import 'package:delivery_app/screens/home/home_view.dart';
 import 'package:delivery_app/screens/menu/menu_view.dart';
+import 'package:delivery_app/screens/panier/panier_view.dart';
 import 'package:flutter/material.dart';
 
 class MainTabView extends StatefulWidget {
@@ -76,7 +77,7 @@ class _MainTabViewState extends State<MainTabView> {
            onTap: (){
             if(selectTab !=1){
               selectTab = 1;
-              selectPageView = Container();
+              selectPageView = PanierView();
             }
             if(mounted){
               setState(() {
